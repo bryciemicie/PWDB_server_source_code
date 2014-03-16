@@ -1,0 +1,40 @@
+[Project WaifuDB Changelog][Changelog kept by Bakaboykie]
+
+[v002 2/17/2014]
++ Added waifu file storage
+	- All files will be stored in /files/waifu_files/
++ Added date uploaded unchangeable variable to all models
++ Updated admin.py with new models
+	- Userena management functionality
+	- View all "private" (Not so private for the admin) messages
++ Added user accounts
+	- Ability to register/sign in/sign out
+	- Ability to change acocunt settings (info, avatar, email etc)
+	- Ability to send messages to other users
+	- Active account via email
++ Added basic functionality to HTML templates
+	- Stored in /templates/website
+	- Non-html related files are in /static/
+
+[v001 initial 2/13/2014]
++ Created filesystem
+	- Files will be uploaded to /files/
+	- All project core files will be in /Project_WaifuDB/Project_WaifuDB/
+	- Static HTML files and website images will be in /static/
++ Set up waifu model
+	- Waifu information fields, most not required but available for the true waifulovers
+	- Added method for displaying thumbnail picture in the admin
+	- Profile picture field, upload to /files/waifu_profile_picture/
++ Set up waifu asset picture model
+	- Relationship with waifu
+	- namefield, probably gonna make it an "uploaded by [user]" field later
+	- Picture field, upload to /files/waifu_pictures/
++ Waifu profile picture with uploading to the correct folder
++ Admin panel
+	- Add waifus
+	- Add assets to waifus
+	- Admin panel sorting
+	- admin.py -> remove 'admin_image', from class WaifuAdmin variable list_display to disable thumbnails
++ Added admin HTML templates to /templates
+	- Modified admin topbar and title
++ Dev environment static file serving (Turn debug off to disable)

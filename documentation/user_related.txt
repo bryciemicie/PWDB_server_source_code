@@ -1,0 +1,15 @@
+'/accounts/%(username)s/'
+'/accounts/signin/'
+'/accounts/signout/'
+'/accounts/signup/'
+
+
+Remove all accounts that haven't been actived after USERENA_ACTIVATION_DAYS:
+python manage.py clean_expired
+
+If permissions are wrong: (Don't run if there are no problems!)
+python manage.py check_permissions
+
+
+DOCUMENTATION:
+http://docs.django-userena.org/en/latest/index.html

@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+   <head>
+      <title>Waifu DB</title>
+      <link rel="stylesheet" href="{% static "styles.css" %}" />
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   </head>
+   <body>
+      <div id="header" >
+         <a title="Home" href="" >Home</a>
+         <ul class="menu" >
+            <li class="first" >
+               <a href="" title="My Harem" >
+                  My Favorites
+               </a>
+            </li>
+            <li class="current">
+               <a href="" title="Home" >
+                  Home
+               </a>
+            </li>
+            <li class="last" >
+               <a href="" title="Settings" >
+                  Settings
+               </a>
+            </li>
+         </ul>
+      </div>
+      <ul id="menu" class="menu" >
+         <li class="first" > 
+             <a href="" title="link">
+               link
+            </a>
+         </li>
+         <li>
+            <a href="" title="another link" >
+               another link
+            </a>
+         </li>
+         <li class="last">
+            <a href="" title="more link" >
+               more link
+            </a>
+         </li>
+      </ul>
+      <div id="content">
+          
+         <ul class="menu" >
+            <li class="first" >
+               <a href="" title="First Item" >
+                  First Item
+               </a>
+            </li>
+            <li class="current" >
+               <a href="" title="Second Item" >
+                  Second Item
+               </a>
+            </li>
+            <li class="last" >
+               <a href="" title="Last Item" >
+                  Last Item
+               </a>
+            </li>
+             <hr>
+         {% if latest_waifu_list %}
+            {% for waifu in latest_waifu_list %}
+               <li class="last" >
+               <a href="/waifus/{{ waifu.id }}/" >
+                  {{ waifu.name_alphabet }}
+               </a>
+            </li>
+            {% endfor %}
+         {% else %}
+             <li class="last" >
+               <a href="" title="No Waifus added yet" >
+                  No Waifus added yet
+               </a>
+            </li>
+         {% endif %}
+         </ul>
+
+            {% if latest_waifu_list %}
+                 {% for waifu in latest_waifu_list %}
+                 <div class="container" >
+                 <img src="{{ waifu.picture.url }}" class="height-image"/><br />
+                 <a href="/waifus/{{ waifu.id }}/" >{{ waifu.name_alphabet }}</a>
+                 </div>
+                 {% endfor %}
+            {% else %}
+                <p>No waifus are available.</p>
+            {% endif %}
+
+      </div>
+      <div id="footer" ></div>
+   </body>
+</html>

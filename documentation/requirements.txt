@@ -1,0 +1,11 @@
+Python Version = 3.3
+Django Version = 1.5.2
+
+Requires PILLOW Installed too, and it will give syntax errors all the time due to some pillow modules being in Python 2, I'm sorry but this will be needed to fixed by hand.
+It's usually just placing a few () and other python 2 syntax things, and there's about 10-20 instances that will need to be fixed.
+
+external modules:
+hitcount (https://github.com/thornomad/django-hitcount)
+sorl-thumbnail (https://github.com/mariocesar/sorl-thumbnail)
+
+userena (https://github.com/bread-and-pepper/django-userena)
